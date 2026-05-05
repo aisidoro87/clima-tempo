@@ -14,7 +14,7 @@ body {
 }
 
 #search i {
-    background-color: #8dd0f5;
+    background-color: transparent;
     font-size: 20px;
 }
 
@@ -134,6 +134,7 @@ body {
     display: flex;
     width: 100px;
     align-items: center;
+    white-space: nowrap;
 }
 
 #loading {

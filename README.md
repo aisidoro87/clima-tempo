@@ -18,6 +18,12 @@ Um aplicativo web simples para consulta de previsão do tempo em tempo real.
 - Font Awesome (Ícones)
 - Google Fonts
 
+## 🌐 APIs Utilizadas
+
+- **[OpenWeatherMap](https://openweathermap.org/api)**: Dados meteorológicos em tempo real.
+- **[Unsplash API](https://unsplash.com/developers)**: Imagens de fundo dinâmicas baseadas na cidade.
+- **[FlagsAPI](https://flagsapi.com/)**: Ícones de bandeiras dos países.
+
 ## 📂 Estrutura do Projeto
 
 ```text
