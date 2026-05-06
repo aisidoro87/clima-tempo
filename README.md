@@ -4,11 +4,15 @@ Um aplicativo web simples para consulta de previsão do tempo em tempo real.
 
 ## 🚀 Funcionalidades
 
-- Busca de clima por cidade.
-- Exibição de temperatura atual.
-- Descrição das condições climáticas com ícones.
-- Informações de umidade e vento.
-- Interface responsiva.
+- **Geolocalização automática**: Detecta a localização do usuário e exibe o clima local ao acessar a página.
+- **Busca por cidade**: Permite pesquisar o clima de qualquer cidade do mundo.
+- **Previsão para 5 dias**: Exibe a previsão do tempo detalhada para os próximos cinco dias.
+- **Informações em tempo real**: Mostra temperatura, umidade, velocidade do vento e descrição climática.
+- **Horário local**: Exibe a hora local da cidade pesquisada.
+- **Background dinâmico**: Altera a imagem de fundo automaticamente com base na cidade pesquisada através da Unsplash API.
+- **Indicador de carregamento**: Feedback visual enquanto os dados são recuperados.
+- **Interface responsiva**: Design adaptável para diferentes dispositivos e tamanhos de tela.
+- **Tratamento de erros**: Feedback visual caso a cidade não seja encontrada.
 
 ## 🛠️ Tecnologias
 

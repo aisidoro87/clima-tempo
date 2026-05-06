@@ -17,7 +17,7 @@ const loading = document.querySelector("#loading");
 const forecastContainer = document.querySelector("#container-forecast");
 const forecastItems = document.querySelector("#forecast-cards");
 
-// Delay
+// Delay simples para simular tempo de carregamento e mostrar o loading
 const delay = (ms) =>
     new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -81,15 +81,16 @@ const setBackgroundImage = (imageUrl) => {
     document.body.style.backgroundPosition = "center";
 };
 
-
 // Mostrar clima
 const showWeatherData = async (city) => {
+
     try {
         // mostrar loading
         loading.classList.remove("hide");
 
         // esconder clima antigo
         weatherDataContainer.classList.add("hide");
+        forecastContainer.classList.add("hide");
 
         // limpar erro
         errorMessage.textContent = "";
@@ -103,10 +104,19 @@ const showWeatherData = async (city) => {
             delay(1500)
         ]);
 
+        // cidade inválida
+        if (String(weatherData.cod) === "404") {
+            loading.classList.add("hide"); // esconder loading
+            errorMessage.textContent = "Cidade não encontrada..."; // mostrar erro
+            errorMessage.style.display = "block"; // mostrar mensagem de erro
+
+            return;
+        }
+
         console.log(forecastData.list);
 
         // filtrar dados para os próximos dias
-        const dailyForecast = forecastData.list.filter((item) => { // pegar apenas um horário por dia (12:00:00) e excluir o dia atual
+            const dailyForecast = forecastData.list.filter((item) => { // pegar apenas um horário por dia (12:00:00) e excluir o dia atual
             const date = new Date(item.dt_txt).getDate(); //
             const today = new Date().getDate(); // pegar o dia do mês da data atual
             return date !== today && item.dt_txt.includes("12:00:00"); // incluir apenas itens que não sejam do dia atual e que tenham horário 12:00:00
@@ -123,7 +133,6 @@ const showWeatherData = async (city) => {
             const dayName = date.toLocaleDateString("pt-BR", { weekday: "long" }); // pegar o nome do dia da semana em português (ex: "segunda-feira", "terça-feira", etc.)
             const temperature = Math.round(day.main.temp); // pegar a temperatura e arredondar para o número inteiro mais próximo
             const icon = day.weather[0].icon; // pegar o código do ícone do clima para aquele dia (ex: "01d", "02n", etc.)
-
             const forecastCard = document.createElement("div"); // criar um elemento div para cada card
             forecastCard.classList.add("forecast-card"); // adicionar a classe "forecast-card" para estilizar o card, algo como <div class="forecast-card"></div>
             forecastCard.innerHTML = ` 
@@ -134,16 +143,7 @@ const showWeatherData = async (city) => {
             forecastItems.appendChild(forecastCard); // adicionar o card ao contêiner de previsões
         });
 
-
-
-        // cidade inválida
-        if (String(weatherData.cod) === "404") {
-            loading.classList.add("hide"); // esconder loading
-            errorMessage.textContent = "Cidade não encontrada..."; // mostrar erro
-            errorMessage.style.display = "block"; // mostrar mensagem de erro
-
-            return;
-        }
+        forecastContainer.classList.remove("hide");
 
         // horário local
         const date = new Date();
@@ -195,8 +195,6 @@ const showWeatherData = async (city) => {
     }
 };
 
-//
-
 //função que "pergunta" a localização ao navegador
 const getUserLocation = () => {
     // 1. Verificamos se o navegador do usuário suporta geolocalização
@@ -225,6 +223,7 @@ const getUserLocation = () => {
         );
     }
 };
+
 // Evento botão
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
