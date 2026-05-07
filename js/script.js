@@ -16,6 +16,7 @@ const weatherDataContainer = document.querySelector("#weather-data");
 const loading = document.querySelector("#loading");
 const forecastContainer = document.querySelector("#container-forecast");
 const forecastItems = document.querySelector("#forecast-cards");
+const populationElement = document.querySelector("#population span");
 
 // Delay simples para simular tempo de carregamento e mostrar o loading
 const delay = (ms) =>
@@ -28,7 +29,7 @@ const getWeatherData = async (city) => {
 
     const res = await fetch(apiWeatherUrl);
     const data = await res.json();
-
+    
     return data;
 };
 
@@ -116,7 +117,7 @@ const showWeatherData = async (city) => {
         console.log(forecastData.list);
 
         // filtrar dados para os próximos dias
-            const dailyForecast = forecastData.list.filter((item) => { // pegar apenas um horário por dia (12:00:00) e excluir o dia atual
+        const dailyForecast = forecastData.list.filter((item) => { // pegar apenas um horário por dia (12:00:00) e excluir o dia atual
             const date = new Date(item.dt_txt).getDate(); //
             const today = new Date().getDate(); // pegar o dia do mês da data atual
             return date !== today && item.dt_txt.includes("12:00:00"); // incluir apenas itens que não sejam do dia atual e que tenham horário 12:00:00
@@ -163,6 +164,9 @@ const showWeatherData = async (city) => {
 
         countryElement.src =
             `https://flagsapi.com/${weatherData.sys.country}/shiny/64.png`; // bandeira do país
+
+        populationElement.textContent =
+            forecastData.city.population ? `${forecastData.city.population.toLocaleString()} habitantes` : "N/A"; // população (se disponível)
 
         umidityElement.textContent =
             `${weatherData.main.humidity}%`; // umidade

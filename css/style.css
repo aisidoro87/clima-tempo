@@ -86,14 +86,17 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 0.6rem;
+    gap: 1rem;
 }
 
 #weather-data h2 i {
     font-size: 1rem;
 }
 
-#weather-data span {
-    margin: 0.6rem;
+#temperature {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
 }
 
 #country {
@@ -101,7 +104,6 @@ body {
 }
 
 #description {
-    font-weight: bold;
     text-transform: capitalize;
 }
 
@@ -109,7 +111,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: .6rem 0;
+    margin: 0;
 }
 
 #details-container {
@@ -123,23 +125,30 @@ body {
     border-right: 1px solid #fff;
     margin: 0.6rem;
     padding: 0.6rem;
-
 }
 
 .row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
 }
 
 #umidity,
 #wind {
     display: flex;
-    width: 100px;
     align-items: center;
-    white-space: nowrap;
+    justify-content: center;
+    gap: .5rem;
+    width: 140px;
 }
+
+#umidity i,
+#wind i {
+    width: 24px;
+    text-align: center;
+}
+
 
 #loading {
     display: flex;
@@ -185,7 +194,8 @@ body {
     min-width: 100px;
     text-align: center;
     text-transform: capitalize;
-    
+    align-items: center;
+    justify-content: space-between;
 }
 
 .forecast-card:last-child {
@@ -195,7 +205,8 @@ body {
 .forecast-icon {
     width: 70px;
     height: 70px;
-    
+    object-fit: contain;
+    display: block;
 }
 
 @keyframes spin {

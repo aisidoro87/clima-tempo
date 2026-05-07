@@ -1,46 +1,64 @@
-# Clima Tempo
+# 🌤️ Clima Tempo
 
-Um aplicativo web simples para consulta de previsão do tempo em tempo real.
+![GitHub repo size](https://img.shields.io/github/repo-size/seu-usuario/clima-tempo?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/seu-usuario/clima-tempo?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/seu-usuario/clima-tempo?style=for-the-badge)
+
+Um aplicativo web moderno e responsivo para consulta de previsão do tempo em tempo real, utilizando APIs externas para fornecer dados precisos e uma experiência visual dinâmica.
 
 ## 🚀 Funcionalidades
 
-- **Geolocalização automática**: Detecta a localização do usuário e exibe o clima local ao acessar a página.
-- **Busca por cidade**: Permite pesquisar o clima de qualquer cidade do mundo.
-- **Previsão para 5 dias**: Exibe a previsão do tempo detalhada para os próximos cinco dias.
-- **Informações em tempo real**: Mostra temperatura, umidade, velocidade do vento e descrição climática.
-- **Horário local**: Exibe a hora local da cidade pesquisada.
-- **Background dinâmico**: Altera a imagem de fundo automaticamente com base na cidade pesquisada através da Unsplash API.
-- **Indicador de carregamento**: Feedback visual enquanto os dados são recuperados.
-- **Interface responsiva**: Design adaptável para diferentes dispositivos e tamanhos de tela.
-- **Tratamento de erros**: Feedback visual caso a cidade não seja encontrada.
+- **📍 Geolocalização Automática**: Detecta sua localização atual ao abrir o app para exibir o clima local instantaneamente.
+- **🔍 Busca Global**: Pesquise o clima de qualquer cidade do mundo pelo nome.
+- **📅 Previsão Estendida**: Visualize a previsão detalhada para os próximos 5 dias.
+- **🌡️ Dados em Tempo Real**: Temperatura, umidade, velocidade do vento e descrição das condições climáticas.
+- **🕒 Horário Local**: Exibe a hora certa da cidade pesquisada, considerando o fuso horário.
+- **🖼️ Background Dinâmico**: A imagem de fundo se adapta automaticamente à cidade pesquisada (via Unsplash API).
+- **⏳ Feedback de Carregamento**: Indicador visual (spinner) enquanto os dados são processados.
+- **📱 Design Responsivo**: Interface otimizada para dispositivos móveis, tablets e desktops.
+- **⚠️ Tratamento de Erros**: Mensagens amigáveis para cidades não encontradas ou falhas de conexão.
 
-## 🛠️ Tecnologias
+## 🛠️ Tecnologias Utilizadas
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Font Awesome (Ícones)
-- Google Fonts
+- **Frontend**: HTML5, CSS3 (Flexbox/Grid), JavaScript ES6+
+- **Ícones**: [Font Awesome](https://fontawesome.com/)
+- **Tipografia**: [Google Fonts](https://fonts.google.com/)
 
-## 🌐 APIs Utilizadas
+## 🌐 APIs Integradas
 
-- **[OpenWeatherMap](https://openweathermap.org/api)**: Dados meteorológicos em tempo real.
-- **[Unsplash API](https://unsplash.com/developers)**: Imagens de fundo dinâmicas baseadas na cidade.
-- **[FlagsAPI](https://flagsapi.com/)**: Ícones de bandeiras dos países.
+- **[OpenWeatherMap](https://openweathermap.org/api)**: Consumo de dados meteorológicos e previsões.
+- **[Unsplash API](https://unsplash.com/developers)**: Busca de imagens contextuais para o fundo da página.
+- **[FlagsAPI](https://flagsapi.com/)**: Exibição das bandeiras dos países correspondentes.
 
 ## 📂 Estrutura do Projeto
 
 ```text
 clima-tempo/
 ├── css/
-│   └── style.css
+│   └── style.css      # Estilização e responsividade
 ├── js/
-│   └── script.js
-├── index.html
-└── README.md
+│   └── script.js     # Lógica de consumo de APIs e DOM
+├── index.html         # Estrutura principal
+└── README.md          # Documentação
 ```
 
-## 🔧 Como usar
+## 🔧 Como Executar o Projeto
 
-1. Faça o download ou clone este repositório.
-2. Abra o arquivo `index.html` no seu navegador de preferência.
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/clima-tempo.git
+   ```
+2. **Abra o projeto:**
+   Navegue até a pasta e abra o arquivo `index.html` em seu navegador.
+
+> **Nota:** Para o funcionamento completo do background dinâmico e dados climáticos, é necessário possuir chaves de API válidas (já configuradas no script para demonstração).
+
+## 🔮 Próximas Implementações
+
+- [ ] **Histórico de Buscas**: Armazenar as últimas cidades pesquisadas usando `LocalStorage`.
+- [ ] **Temas Baseados no Clima**: Alterar as cores do app conforme o clima (ex: tons quentes para sol, frios para chuva).
+- [ ] **Proteção de Credenciais**: Migrar chaves de API para variáveis de ambiente ou um backend simples.
+
+---
+Desenvolvido com ❤️ por [Seu Nome/GitHub]
+
