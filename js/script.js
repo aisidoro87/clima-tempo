@@ -17,6 +17,45 @@ const loading = document.querySelector("#loading");
 const forecastContainer = document.querySelector("#container-forecast");
 const forecastItems = document.querySelector("#forecast-cards");
 const populationElement = document.querySelector("#population span");
+const cards = document.querySelector(".cards");
+const cardsItems = document.querySelector(".cards-items");
+const popularCities = [
+    "Curitiba",
+    "Paris",
+    "Londres",
+    "Miami",
+    "Madrid"
+];
+
+const createPopularCitiesCards = () => {
+
+    popularCities.forEach((city) => {
+
+        // cria uma li para cada cidade
+        const cityCard = document.createElement("li");
+
+        // adiciona classe
+        cityCard.classList.add("popular-city");
+
+        // adiciona nome
+        cityCard.textContent = city;
+
+        // evento de clique
+        cityCard.addEventListener("click", () => {
+
+            // preencher input
+            cityInput.value = city;
+
+            // buscar clima
+            showWeatherData(city);
+        });
+
+        // adicionar na UL
+        cardsItems.appendChild(cityCard);
+
+    });
+
+};
 
 // Delay simples para simular tempo de carregamento e mostrar o loading
 const delay = (ms) =>
@@ -113,6 +152,9 @@ const showWeatherData = async (city) => {
 
             return;
         }
+
+        // esconder cidades populares
+        cards.classList.add("hide");
 
         console.log(forecastData.list);
 
@@ -251,4 +293,5 @@ cityInput.addEventListener("keypress", (e) => {
         searchBtn.click();
     }
 });
+createPopularCitiesCards();
 getUserLocation();

@@ -23,80 +23,95 @@
 </head>
 
 <body>
+    <div class="container-body">
 
-    <div class="container">
-
-        <div class="form">
-            <h3>Confira o clima de uma cidade:</h3>
-
-            <div class="form-input-container">
-                <input type="text" placeholder="Digite o nome da cidade..." id="city-input">
-
-                <button id="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
-
-            <div id="loading" class="hide">
-                <div class="spinner"></div>
-            </div>
-
-            <p id="error-message"></p>
+        <div id="city-titulo">
+            <h1>Qual é o clima <br>
+                da <span id="city-name">sua cidade?</span></h1>
+            <p id="city-titulo-paragrafo"> Consulte a previsão do tempo de qualquer lugar do mundo de forma rápida e
+                fácil</p>
         </div>
 
-        <div id="weather-data" class="hide">
+        <div class="container">
 
-            <h2>
-                <i class="fa-solid fa-location-dot"></i>
-                <span id="city"></span>
-                <img src="" alt="Bandeira do país" id="country">
-            </h2>
+            <div class="form">
+                <h3>Buscar cidade</h3>
+                <p class="form-paragrafo">Digite o nome da cidade para ver a previsão</p>
 
-            <p id="temperature">
-                <span></span>&deg;C
-            </p>
+                <div class="form-input-container">
+                    <input type="text" placeholder="Ex: São Paulo, Paris, Miami..." id="city-input">
 
-            <div id="description-container">
-                <p id="description"></p>
-                <img src="" alt="Condições do tempo" id="weather-icon">
-            </div>
-
-            <div id="details-container">
-
-                <p id="population">
-                    <i class="fa-solid fa-users"></i>
-                    <span></span>
-                </p>
-
-                <div class="row">
-                    <p id="umidity">
-                        <i class="fa-solid fa-droplet"></i>
-                        <span></span>
-                    </p>
-
-                    <p id="wind">
-                        <i class="fa-solid fa-wind"></i>
-                        <span></span>
-                    </p>
+                    <button id="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
 
-                <p id="local-time">
-                    <i class="fa-solid fa-clock"></i>
-                    <span></span>
+                <div class="cards">
+                    <p>Cidades populares</p>
+                    <ul class="cards-items"></ul>
+                </div>
+
+                <div id="loading" class="hide">
+                    <div class="spinner"></div>
+                </div>
+
+                <p id="error-message"></p>
+            </div>
+
+            <div id="weather-data" class="hide">
+
+                <h2>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="city"></span>
+                    <img src="" alt="Bandeira do país" id="country">
+                </h2>
+
+                <p id="temperature">
+                    <span></span>&deg;C
                 </p>
 
+                <div id="description-container">
+                    <p id="description"></p>
+                    <img src="" alt="Condições do tempo" id="weather-icon">
+                </div>
+
+                <div id="details-container">
+
+                    <p id="population">
+                        <i class="fa-solid fa-users"></i>
+                        <span></span>
+                    </p>
+
+                    <div class="row">
+                        <p id="umidity">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span></span>
+                        </p>
+
+                        <p id="wind">
+                            <i class="fa-solid fa-wind"></i>
+                            <span></span>
+                        </p>
+                    </div>
+
+                    <p id="local-time">
+                        <i class="fa-solid fa-clock"></i>
+                        <span></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="container-forecast" class="hide">
+                <h2 id="forecast-titulo">Previsão para os próximos 5 dias</h2>
+                <div id="forecast-cards">
+                </div>
             </div>
 
         </div>
-
-        <div id="container-forecast" class="hide">
-            <h2 id="forecast-titulo">Previsão para os próximos 5 dias</h2>
-            <div id="forecast-cards">
-            </div>
-        </div>
-
     </div>
-
 </body>
+
 
 </html>

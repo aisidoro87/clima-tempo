@@ -6,11 +6,39 @@
 }
 
 body {
-    background: linear-gradient(180deg, #594cee 0%, #8dd0f5 100%);
+    background-image: url("/assets/ceu-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 0.5rem 0;
+}
+
+#city-titulo h1 {
+    color: #FFF;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+#city-titulo-paragrafo {
+    color: #FFF;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+#city-titulo h1,
+#city-titulo-paragrafo {
+    text-align: center;
+}
+
+
+#city-name {
+    color: #8dd0f5;
+
 }
 
 #search i {
@@ -27,21 +55,38 @@ body {
 }
 
 .container {
-    background: rgba(15, 15, 15, 0.746);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(78, 135, 182, 0.363);
+    padding: 1ãorem 2rem; /*ESPAÇAMENTO QUE EU QUERO*/
     color: #fdfdfd;
     border-radius: 1rem;
+    border: 1px solid rgba(180, 178, 178, 0.521);
+    backdrop-filter: blur(10px);
+}
+
+.container-body {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
 }
 
 /*Formulário*/
 
+.form-paragrafo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
 .form h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .form-input-container {
     display: flex;
+    margin-bottom: 2rem;
 }
 
 .form-input-container input {
@@ -71,6 +116,30 @@ body {
     border-radius: 4px;
     color: #FFF;
     cursor: pointer;
+}
+
+.cards-items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.popular-city {
+    background: rgba(255,255,255,0.15);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.2);
+    min-width: 80px;
+    text-align: center;
+}
+
+.popular-city:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
 }
 
 /* Clima */
@@ -173,7 +242,8 @@ body {
     display: flex;
     padding: 1em;
     border-top: 1px solid #fff;
-    margin-top: 1.5rem;
+    margin-top: 1.5rem; 
+    justify-content: center;
 }
 
 #forecast-cards {
@@ -188,14 +258,14 @@ body {
 .forecast-card {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.2rem;
     border-right: 1px solid #fff;
-    padding: 1rem;
-    min-width: 100px;
+    padding: 0.5rem 1rem 1rem;
+    border-radius: 1rem;
+    min-width: 80px;
     text-align: center;
     text-transform: capitalize;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .forecast-card:last-child {
@@ -203,8 +273,8 @@ body {
 }
 
 .forecast-icon {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     object-fit: contain;
     display: block;
 }
