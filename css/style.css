@@ -59,7 +59,8 @@ body {
     max-width: 700px;
     margin: 0 auto;
     background: rgba(78, 135, 182, 0.363);
-    padding: 1rem 2rem; /*ESPAÇAMENTO QUE EU QUERO*/
+    padding: 1rem 2rem;
+    /*ESPAÇAMENTO QUE EU QUERO*/
     color: #fdfdfd;
     border-radius: 1rem;
     border: 1px solid rgba(180, 178, 178, 0.521);
@@ -127,19 +128,21 @@ body {
 }
 
 .popular-city {
-    background: rgba(255,255,255,0.15);
-    padding: 0.8rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     min-width: 80px;
-    text-align: center;
 }
 
 .popular-city:hover {
-    background: rgba(255,255,255,0.25);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
 /* Clima */
@@ -242,7 +245,7 @@ body {
     display: flex;
     padding: 1em;
     border-top: 1px solid #fff;
-    margin-top: 1.5rem; 
+    margin-top: 1.5rem;
     justify-content: center;
 }
 
@@ -268,9 +271,9 @@ body {
     text-transform: capitalize;
 }
 
-.forecast-card:last-child {
+/*.forecast-card:last-child {
     border-right: none;
-}
+}*/
 
 .forecast-icon {
     width: 55px;

@@ -27,18 +27,38 @@ const popularCities = [
     "Madrid"
 ];
 
-const createPopularCitiesCards = () => {
+const createPopularCitiesCards = async () => {
 
-    popularCities.forEach((city) => {
+    for (const city of popularCities) {
+        const weatherData = await getWeatherData(city);
+        const iconCode = weatherData.weather[0].icon;
+
+        // criar elemento de imagem para o ícone do clima
+        const iconImg = document.createElement("img");
+
+        iconImg.src = `https://openweathermap.org/img/wn/${iconCode}.png`; // URL do ícone do clima
+        iconImg.alt = weatherData.weather[0].description; // descrição do clima para acessibilidade
 
         // cria uma li para cada cidade
         const cityCard = document.createElement("li");
 
+        // cria um span para o nome da cidade
+        const text = document.createElement("span");
+
+        // adiciona ícone do clima
+        cityCard.appendChild(iconImg);
+
         // adiciona classe
         cityCard.classList.add("popular-city");
 
-        // adiciona nome
-        cityCard.textContent = city;
+        // adiciona nome da cidade
+        text.textContent = city;
+
+        // adiciona o span com o nome da cidade dentro da li
+        cityCard.appendChild(text);
+
+        // adiciona classe ao ícone
+        iconImg.classList.add("city-icon");
 
         // evento de clique
         cityCard.addEventListener("click", () => {
@@ -53,7 +73,9 @@ const createPopularCitiesCards = () => {
         // adicionar na UL
         cardsItems.appendChild(cityCard);
 
-    });
+        weatherData.weather[0].icon;
+        console.log(cityCard);
+    };
 
 };
 
@@ -68,7 +90,7 @@ const getWeatherData = async (city) => {
 
     const res = await fetch(apiWeatherUrl);
     const data = await res.json();
-    
+
     return data;
 };
 
